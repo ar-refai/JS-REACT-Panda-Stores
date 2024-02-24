@@ -28,11 +28,13 @@ export default async function Home() {
       </div>
       <div className="products-container">
           {
-          products?.map((product) => product.name)
+          products?.map((product) => {
+          return <Product key={product._id} product={product}/>
+        })
           }      
         </div>
 
-      <FooterBanner />
+      <FooterBanner footerBanner = {bannerData && bannerData[0]}/>
     </>
   );
 }
