@@ -1,5 +1,5 @@
 import {createClient} from '@sanity/client'
-import imagUrlBuilder from '@sanity/image-url';
+import imageUrlBuilder from '@sanity/image-url';
 
 export const client = createClient({
     projectId :'nmh18v7y',
@@ -9,5 +9,5 @@ export const client = createClient({
     token : process.env.NEXT_PUBLIC_SANITY_TOKEN,
 
 });
-const builder = imagUrlBuilder(client);
+const builder = imageUrlBuilder(client);
 export const urlFor = (source) => builder.image(source);

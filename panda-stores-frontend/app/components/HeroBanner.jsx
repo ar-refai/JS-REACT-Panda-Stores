@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import { urlFor } from '../../lib/client';
 const HeroBanner = (bannerData) => {
+    console.log(urlFor(bannerData?.HeroBanner.image).url().toString())
     return (
 
         <div className='hero-banner-container'>
@@ -15,9 +16,9 @@ const HeroBanner = (bannerData) => {
                 <h1>
                     {bannerData?.HeroBanner.largeText1}
                 </h1>
-                <img src={urlFor(bannerData?.HeroBanner.image)} alt='headphones' className='hero-banner-image' />
+                <img src= {urlFor(bannerData?.HeroBanner.image).url()} alt='headphones' className='hero-banner-image' />
                 <div>
-                    <Link href='/Products/ID'>
+                    <Link href={`/Products/${bannerData?.HeroBanner.product}`}>
                         <button type='button'>
                             {bannerData?.HeroBanner.buttonText}
                         </button>
@@ -26,7 +27,9 @@ const HeroBanner = (bannerData) => {
                         <h5>
                             DESCRIPTION
                         </h5>
-                        <p>DESCRIPTION</p>
+                        <p>
+                            {bannerData?.HeroBanner.desc}
+                        </p>
                     </div>
                 </div>
             </div>
