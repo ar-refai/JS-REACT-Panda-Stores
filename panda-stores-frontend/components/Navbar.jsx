@@ -4,10 +4,13 @@ import { AiOutlineShopping } from 'react-icons/ai'
 import Logo from '../public/assets/logo-no-background.png';
 
 import { Cart } from './';
-import { useStateContext} from '../context/StateContext';
-
+import { useStateContext } from '../context/StateContext'
 const Navbar = () => {
+  console.log('#'.repeat(55));
+  console.log(useStateContext());
+  console.log('#'.repeat(55));
   const { showCart, setShowCart, totalQuantities } = useStateContext();
+
 
   return (
     <div className="navbar-container">
