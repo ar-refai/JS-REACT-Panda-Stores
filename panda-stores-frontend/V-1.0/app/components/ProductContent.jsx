@@ -3,6 +3,8 @@ import React , {useState} from 'react'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { Product } from '@/app/components';
 import { urlFor } from '@/lib/client';
+import { v4 as uuidv4 } from 'uuid';
+
 const ProductContent = ({details,image,name,price,products}) => {
     const [index, setIndex] = useState(0);
 return (
@@ -22,6 +24,7 @@ return (
                             alt='product' 
                             className={i === index ? ' small-image selected-image' : 'small-image'} 
                             onMouseEnter={()=>{setIndex(i)}}
+                            key = {uuidv4()}
                         />
                         )
                     })

@@ -1,5 +1,5 @@
 import React from 'react';
-import { client, urlFor } from '@/lib/client';
+import { client } from '@/lib/client';
 import ProductContent from '@/app/components/ProductContent';
 
 const ProductDetails = async ({ params: { slug } }) => {
